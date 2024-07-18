@@ -9,26 +9,26 @@ def fp_interpreter(file_path):
     return forbidden_phrases_csv
 
 def doc_scanner(forbidden_phrases, doc):
-    """This function scans each line in the html file "doc" and ensures there are no instances of any forbidden words or phrases from the "forbidden_phrases" list."""
-    with open(doc, 'r') as file:
+    """This function scans each line in the html file 'doc' and ensures there are no instances of any forbidden words or phrases from the 'forbidden_phrases' list."""
+    with open(doc, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     results = []
     for phrase in forbidden_phrases:
-        forbidden_phrase = phrase
+        forbidden_phrase_lower = phrase.lower()
         for i in range(len(lines)):
-            if forbidden_phrase in lines[i]:
-                line = lines[i]
-                index = 0
-                while True:
-                    #this checks for multiple instances of the same forbidden phrase on a single line in the html doc. The find method starts from index;
-                    #at each instance of a forbidden phrase, the loop calls the find method again from the ending index of the previously found forbidden phrase.
-                    #if the find method finds no forbidden phrases, index will == -1, which will break the infinite while loop.
-                    index = line.find(forbidden_phrase, index)
-                    if index == -1:
-                        break
-                    fp_result2 = forbidden_phrase + " : line " + str(i + 1)
-                    results.append(fp_result2)
-                    index += len(forbidden_phrase)
+            line = lines[i]
+            line_lower = line.lower()
+            index = 0
+            while True:
+                # This checks for multiple instances of the same forbidden phrase on a single line in the HTML doc. The find method starts from index;
+                # at each instance of a forbidden phrase, the loop calls the find method again from the ending index of the previously found forbidden phrase.
+                # If the find method finds no forbidden phrases, index will == -1, which will break the infinite while loop.
+                index = line_lower.find(forbidden_phrase_lower, index)
+                if index == -1:
+                    break
+                fp_result2 = phrase + " : line " + str(i + 1)
+                results.append(fp_result2)
+                index += len(forbidden_phrase_lower)
     return results
 
 current_dir = os.path.dirname(__file__)
