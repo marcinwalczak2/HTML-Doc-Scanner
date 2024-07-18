@@ -55,7 +55,7 @@ if __name__ == "__main__":
         sys.exit()
     if default_or_not.lower( )== "n":
         forbidden_phrases_custom = input("Enter path of your custom csv file: ").strip('"').strip()
-        doc = input("Enter path of HTML file: ").strip('"').strip()
+        doc = input("Enter path of html file: ").strip('"').strip()
         forbidden_phrases_custom = fp_interpreter(forbidden_phrases_custom)
         finalresult = doc_scanner(forbidden_phrases_custom, doc)
         if len(finalresult) > 0:
