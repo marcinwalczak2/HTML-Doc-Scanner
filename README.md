@@ -1,5 +1,5 @@
 # About Docscanner
-Docscanner allows you to streamline your documentation workflow by detecting words or phrases listed in a _.csv_ file in an inputted _.html_ file. If any words/phrases are detected, Docscanner returns both the word/phrase as well as the line number that it is located on. This helps eliminate human error when applying style guide content standards. 
+Docscanner allows you to streamline your documentation workflow by detecting words or phrases listed in a _.csv_ file in an inputted _.html_ file. If any words/phrases are detected, Docscanner returns both the word/phrase as well as the line number that it is located on. This helps eliminate human error when applying style guide content standards in a documentation project. 
 
 The script is case insensitive and is also capable of finding duplicate words/phrases on the same line in the _.html_ file. 
 
@@ -9,19 +9,20 @@ Install Docscanner by running the following in a terminal:
 `pip install doc-scanner`
 
 ## Using Docscanner
-Initialize the script by entering the following into your terminal:  
+1. Enter the following in your terminal:  
 `python docscanner.py`  
-You will be prompted with the following:  
+2. You will be prompted with the following:  
 `Use default csv file of forbidden phrases? (respond Y or N): `  
-To use the default csv file, type "Y". It will automatically jump to the next argument where you input the _.html_ file path.  
-If you want to use a custom csv file, type "N". You will be prompted with the following;  
-`Enter path of your custom csv file: ` Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting __Copy as path__. 
+    - To use the default csv file, type "Y". It will automatically jump to the next argument where you input the _.html_ file path.  
+    - To use a custom csv file, type "N". You will be prompted with the following:  
+`Enter path of your custom csv file: `  
+Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting __Copy as path__. 
 > **_NOTE:_** The path address is automatically stripped of unnecessary characters such as quotations marks or spaces. You do not have to format your file path after pasting it.
 
-After you choose to use either the default or custom _.csv_ file, you will be prompted with the following:  
+3. After choosing to use either the default or custom _.csv_ file, you will be prompted with the following:  
 `Enter path of HTML file: `
 
-Docscanner will return whatever words/phrases it found in your _.html_ file along with the line numbers on which it was found. 
+4. Docscanner will return whatever words/phrases it found in your _.html_ file along with the line numbers on which it was found. 
 
 ### Data Formatting
 Ensure that your _.csv_ file has no header columns, and that each individual word and phrase occupies a single row within the first column.
