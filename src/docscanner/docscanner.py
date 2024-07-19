@@ -32,7 +32,7 @@ def doc_scanner(forbidden_phrases, doc):
     return results
 
 current_dir = os.path.dirname(__file__)
-forbidden_phrases_path = os.path.join(current_dir, "..", "data", "Style Guide Phrases.csv") #Add a csv file in the data folder and change the file name in the quotes here to change the default CSV file. 
+forbidden_phrases_path = os.path.join(current_dir, "..", "..", "data", "Style Guide Phrases.csv") #Add a csv file in the data folder and change the file name in the quotes here to change the default CSV file. 
 forbidden_phrases_default = fp_interpreter(forbidden_phrases_path)
 example_doc= "C:\\Code Repository\\Code Bin Python\\example.html"
 
@@ -42,7 +42,7 @@ finalresult = doc_scanner(forbidden_phrases_csv, example_doc)
 #print(finalresult)
 '''
 
-if __name__ == "__main__":
+def main():
     default_or_not = input("Use default csv file of forbidden phrases? (respond Y or N): ", )
     if default_or_not.lower() == "y":
         doc = input("Enter path of html file: ").strip('"').strip()
@@ -67,3 +67,6 @@ if __name__ == "__main__":
     else:
         print("Invalid argument(s). Please check GitHub documentation for more information on argument formatting.")
         sys.exit()
+
+if __name__ == "__main__":
+    main()

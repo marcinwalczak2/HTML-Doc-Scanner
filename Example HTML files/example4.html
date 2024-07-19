@@ -1,0 +1,45 @@
+<h1 id="about-docscanner">About Docscanner</h1>
+<p>Docscanner allows you to streamline your documentation workflow by detecting words or phrases listed in a <em>.csv</em> file in an inputted <em>.html</em> file. If any words/phrases are detected, Docscanner returns both the word/phrase as well as the line number that it is located on. This helps eliminate human error when applying style guide content standards in a documentation project. </p>
+<p>The script is case insensitive and is also capable of finding duplicate words/phrases on the same line in the <em>.html</em> file. </p>
+<h2 id="installing-docscanner">Installing Docscanner</h2>
+<p>If you haven&#39;t already, download Python <a href="https://www.python.org/downloads/">here</a>.  </p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> If installing Python for the first time, make sure you select the <strong>Add Python 3.7 to PATH</strong> checkbox.  </p>
+</blockquote>
+<p>Install Docscanner by running the following in your Command Prompt terminal:<br><code>pip install doc-scanner</code></p>
+<h2 id="using-docscanner">Using Docscanner</h2>
+<ol>
+<li>Initiate Docscanner by running the following in your Command Prompt terminal:<br><code>python docscanner.py</code><br>You will be prompted with the following:<br><code>Use default csv file of forbidden phrases? (respond Y or N):</code>  </li>
+<li><p>Choose whether to use the default <em>.csv</em> file or to add a custom path:</p>
+<ul>
+<li>To use the default csv file, enter &quot;Y&quot;. The script will jump to the next argument where you input the <em>.html</em> file path.  </li>
+<li>To use a custom csv file, enter &quot;N&quot;. You will be prompted with the following:<br><code>Enter path of your custom csv file:</code><br>Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting <strong>Copy as path</strong>.<blockquote>
+<p><strong><em>NOTE:</em></strong> The path address is automatically stripped of unnecessary characters such as quotations marks or spaces. You do not have to format your file paths after pasting them.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>After choosing to use either the default or custom <em>.csv</em> file, you will be prompted with the following:<br><code>Enter path of html file:</code><br>Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting <strong>Copy as path</strong>. </p>
+</li>
+</ol>
+<p>Docscanner will return whatever words/phrases it found in your <em>.html</em> file along with the line numbers on which they were found. </p>
+<h3 id="formatting-data">Formatting Data</h3>
+<p>Ensure that your <em>.csv</em> file has no header columns and that each individual word/phrase occupies a single row within the first column.</p>
+<h4 id="example-_-csv_-file-">Example <em>.CSV</em> file:</h4>
+<p><code>word_1</code><br><code>phrase 1</code><br><code>word_2</code></p>
+<h3 id="changing-the-default-file">Changing the Default File</h3>
+<ol>
+<li>Locate the root directory storing docscanner.py. </li>
+<li>Open the <em>data</em> folder. </li>
+<li>Delete or alter the existing <em>.csv</em> file and save your changes. </li>
+<li>Open the <em>src</em> folder.</li>
+<li>Change the string for the variable <strong>forbidden_phrases_path</strong> to match the name of your new default file in the <em>data</em> folder. </li>
+<li>Save your changes. </li>
+</ol>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If Docscanner is not running properly:</p>
+<ul>
+<li>Ensure that all file paths are correct.  </li>
+<li>Verify you are using a Command Prompt terminal, not PowerShell.</li>
+<li>Check whether the <code>docscanner</code> directory structure on your workstation matches what is on GitHub. </li>
+</ul>

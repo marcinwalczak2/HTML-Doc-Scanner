@@ -5,33 +5,46 @@ The script is case insensitive and is also capable of finding duplicate words/ph
 
 ## Installing Docscanner
 If you haven't already, download Python [here](https://www.python.org/downloads/).  
-Install Docscanner by running the following in a terminal:  
+> **_NOTE:_** If installing Python for the first time, make sure you select the __Add Python 3.7 to PATH__ checkbox.  
+
+Install Docscanner by running the following in your Command Prompt terminal:  
 `pip install doc-scanner`
 
 ## Using Docscanner
-1. Enter the following in your terminal:  
+1. Initiate Docscanner by running the following in your Command Prompt terminal:  
 `python docscanner.py`  
-2. You will be prompted with the following:  
+You will be prompted with the following:  
 `Use default csv file of forbidden phrases? (respond Y or N): `  
-    - To use the default csv file, type "Y". It will automatically jump to the next argument where you input the _.html_ file path.  
-    - To use a custom csv file, type "N". You will be prompted with the following:  
+2. Choose whether to use the default _.csv_ file or to add a custom path:
+    - To use the default csv file, enter "Y". The script will jump to the next argument where you input the _.html_ file path.  
+    - To use a custom csv file, enter "N". You will be prompted with the following:  
 `Enter path of your custom csv file: `  
-Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting __Copy as path__. 
-> **_NOTE:_** The path address is automatically stripped of unnecessary characters such as quotations marks or spaces. You do not have to format your file path after pasting it.
+Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting __Copy as path__.
+      > **_NOTE:_** The path address is automatically stripped of unnecessary characters such as quotations marks or spaces. You do not have to format your file paths after pasting them.
 
 3. After choosing to use either the default or custom _.csv_ file, you will be prompted with the following:  
-`Enter path of HTML file: `
+`Enter path of html file: `  
+Copy the path from File Explorer by holding \<SHIFT\>, right-clicking your desired file, and selecting __Copy as path__. 
 
-4. Docscanner will return whatever words/phrases it found in your _.html_ file along with the line numbers on which it was found. 
+Docscanner will return whatever words/phrases it found in your _.html_ file along with the line numbers on which they were found. 
 
-### Data Formatting
-Ensure that your _.csv_ file has no header columns, and that each individual word and phrase occupies a single row within the first column.
+### Formatting Data 
+Ensure that your _.csv_ file has no header columns and that each individual word/phrase occupies a single row within the first column.
+#### Example _.CSV_ file: 
+`word_1`    
+`phrase 1`    
+`word_2  `
 
 ### Changing the Default File
-_To change the default file:_
 1. Locate the root directory storing docscanner.py. 
 2. Open the _data_ folder. 
 3. Delete or alter the existing _.csv_ file and save your changes. 
 4. Open the _src_ folder.
-5. Change the string for the variable __forbidden_phrases_path__ to match the name of your new default file in the _data_ folder. 
+5. Change the string for the variable `forbidden_phrases_path ` on line 35 to match the name of your new default file in the _data_ folder. 
 6. Save your changes. 
+
+### Troubleshooting
+If Docscanner is not running properly:
+- Ensure that all file paths are correct.  
+- Verify you are using a Command Prompt terminal, not PowerShell.
+- Check whether the `docscanner ` directory structure on your workstation matches what is on GitHub. 
