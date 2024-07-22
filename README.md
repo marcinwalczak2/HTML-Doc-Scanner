@@ -56,5 +56,5 @@ If Docscanner is not running properly:
 - Check whether the `docscanner` directory structure on your workstation matches what is on GitHub. 
 
 ### Uninstalling
-Uninstall Docscanner by running the following in your terminal:
+Uninstall Docscanner by running the following in your terminal:  
 `pip uninstall -y doc-scanner`
