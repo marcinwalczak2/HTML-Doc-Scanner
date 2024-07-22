@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "doc-scanner"
-version = "0.3"
+version = "0.4"
 description = "A script to scan HTML documents for forbidden phrases stored in a CSV."
 authors = [
   { name = "Marcin Walczak" }
@@ -20,7 +20,7 @@ dependencies = [
   "beautifulsoup4",
   "requests",
   "pandas",
-  "pkg_resources"
+  "setuptools"
 ]
 
 [project.scripts]
