@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "doc-scanner"
-version = "0.2"
+version = "0.3"
 description = "A script to scan HTML documents for forbidden phrases stored in a CSV."
 authors = [
   { name = "Marcin Walczak" }
