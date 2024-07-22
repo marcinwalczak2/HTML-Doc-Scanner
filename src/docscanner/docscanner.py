@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import sys
+import pkg_resources
 
 def fp_interpreter(file_path):
     """Using pandas, transforms the csv file into a dataframe. The dataframe is then turned into a list that is iterated through in the doc_scanner function."""
@@ -31,13 +32,24 @@ def doc_scanner(forbidden_phrases, doc):
                 index += len(forbidden_phrase_lower)
     return results
 
-current_dir = os.path.dirname(__file__)
-forbidden_phrases_path = os.path.join(current_dir, "..", "..", "data", "Style Guide Phrases.csv") #Add a csv file in the data folder and change the file name in the quotes here to change the default CSV file. 
+def get_forbidden_phrases_path():
+    #new solution for running docscanner directly from command prompt. 
+    try:
+        return pkg_resources.resource_filename('docscanner', 'data/Style Guide Phrases.csv')
+    except KeyError:
+        # For running directly from source directory 
+        current_dir = os.path.dirname(__file__)
+        return os.path.join(current_dir, "..", "data", "Style Guide Phrases.csv")
+
+forbidden_phrases_path = get_forbidden_phrases_path()
 forbidden_phrases_default = fp_interpreter(forbidden_phrases_path)
-example_doc= "C:\\Code Repository\\Code Bin Python\\example.html"
 
 '''
 Testing:
+#current_dir = os.path.dirname(__file__)
+#forbidden_phrases_path = os.path.join(current_dir, "..", "..", "data", "Style Guide Phrases.csv") #Add a csv file in the data folder and change the file name in the quotes here to change the default CSV file. 
+#forbidden_phrases_default = fp_interpreter(forbidden_phrases_path)
+#example_doc= "C:\\Code Repository\\Code Bin Python\\example.html"
 finalresult = doc_scanner(forbidden_phrases_csv, example_doc)
 #print(finalresult)
 '''

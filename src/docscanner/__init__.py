@@ -1,1 +1,1 @@
-from src import docscanner
+from .docscanner import main
