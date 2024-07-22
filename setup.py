@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-
 setup(
-    name="docscanner",
+    name="doc-scanner",
     version="0.2",
-    packages=find_packages(),
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
     include_package_data=True,
-    description="A script to scan html documents for forbidden phrases stored in a csv.",
+    description="A script to scan HTML documents for forbidden phrases stored in a CSV.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Marcin Walczak",
@@ -21,10 +21,14 @@ setup(
         'beautifulsoup4',
         'requests',
         'pandas',
+        'pkg_resources'
     ],
     entry_points={
         'console_scripts': [
             'docscanner=docscanner.docscanner:main',
         ],
+    },
+    package_data={
+        'docscanner': ['data/Style Guide Phrases.csv'],
     },
 )

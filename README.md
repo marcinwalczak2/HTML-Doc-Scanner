@@ -8,11 +8,11 @@ If you haven't already, download Python [here](https://www.python.org/downloads/
 > **_NOTE:_** If installing Python for the first time, make sure you select the __Add Python 3.7 to PATH__ checkbox.  
 
 Install Docscanner by running the following in your Command Prompt terminal:  
-`pip install doc-scanner`
+`pip install docscanner`
 
 ## Using Docscanner
-1. Initiate Docscanner by running the following in your Command Prompt terminal:  
-`python docscanner.py`  
+1. Start Docscanner by running the following in your Command Prompt terminal:  
+`docscanner`  
 You will be prompted with the following:  
 `Use default csv file of forbidden phrases? (respond Y or N): `  
 2. Choose whether to use the default _.csv_ file or to add a custom path:
@@ -40,7 +40,7 @@ Ensure that your _.csv_ file has no header columns and that each individual word
 2. Open the _data_ folder. 
 3. Delete or alter the existing _.csv_ file and save your changes. 
 4. Open the _src_ folder.
-5. Change the string for the variable `forbidden_phrases_path ` on line 35 to match the name of your new default file in the _data_ folder. 
+5. Change the file names in the `get_forbidden_phrases_path` function to match the name of your new default file in the _data_ folder. Alternately, you can edit the default _.csv_ file directly. 
 6. Save your changes. 
 
 ### Troubleshooting
