@@ -58,6 +58,3 @@ If Docscanner is not running properly:
 ### Uninstalling
 Uninstall Docscanner by running the following in your terminal:  
 `pip uninstall -y doc-scanner`
-
->[!NOTE]
->test.
